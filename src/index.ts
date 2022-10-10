@@ -26,3 +26,21 @@ let stringArray: string[] = ['Hello', 'my', 'name', 'is', 'David']
 let user: [number, string] = [1, 'David']
 // if you write user[0]., Typescript will try to autocomplete with number methods
 // if you write user[1]., Typescript will try to autocomplete with string methods
+
+// ENUMS //
+// Represent a list of related constants
+// usually we define constants like this
+
+const small = 1;
+const medium = 2;
+const large = 3;
+
+// with enums we can define them like this:
+enum Size { Small = 1, Medium, Large}
+// automatically medium represents 2, and large 3
+let mySize: Size = Size.Medium;
+console.log(mySize)
+
+
+// TYPESCRIPT FUNCTIONS //
+
