@@ -52,5 +52,24 @@ function calculateTax(income: number, taxYear: number): number {
         return income * 1.3;
     }
 }
+// console.log(calculateTax(10_000, 2022))
 
-console.log(calculateTax(10_000, 2022))
+// OBJECTS //
+
+let employee = { id: 1 };
+// employee.name = 'David'; <- This will throw an error because there is no name
+// to pre-define what an object should have we can define it this way:
+let employeeTwo: {
+    id: number,
+    name: string
+    // function for object 
+    retire: (date: Date) => void
+} = { 
+    id: 1, 
+    name: 'David', 
+    retire: (date: Date) => {
+    console.log(date)
+    } 
+}
+// console.log(employeeTwo.name)
+
