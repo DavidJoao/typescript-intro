@@ -39,8 +39,18 @@ const large = 3;
 enum Size { Small = 1, Medium, Large}
 // automatically medium represents 2, and large 3
 let mySize: Size = Size.Medium;
-console.log(mySize)
+// console.log(mySize)
 
 
 // TYPESCRIPT FUNCTIONS //
 
+function calculateTax(income: number, taxYear: number): number {
+    // By specifying that will be a number, function will throw an error if we return a different type of value
+    if (taxYear < 2022){
+        return income * 1.2; 
+    } else {
+        return income * 1.3;
+    }
+}
+
+console.log(calculateTax(10_000, 2022))
