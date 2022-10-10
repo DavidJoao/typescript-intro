@@ -61,7 +61,7 @@ let employee = { id: 1 };
 // to pre-define what an object should have we can define it this way:
 let employeeTwo: {
     id: number,
-    name: string
+    name: string,
     // function for object 
     retire: (date: Date) => void
 } = { 
@@ -73,3 +73,72 @@ let employeeTwo: {
 }
 // console.log(employeeTwo.name)
 
+// ADVANCED TYPES //
+// A different and better way to define object are defining a type first
+// Instead of doing an object like we previously did, we can do it like this:
+
+type Employee = {
+    id: number,
+    name: string,
+    // function for object 
+    retire: (date: Date) => void
+}
+
+let anotherEmployee: Employee = {
+    id: 2,
+    name: 'Daniel',
+    retire: (date: Date) => {
+        console.log(date)
+    }
+}
+
+// UNION TYPES //
+
+function kgToLbs(weight: number | string) {
+    // Narrowing
+    if (typeof weight === 'number') {
+        return weight * 2.2
+    } else {
+        return parseInt(weight) * 2.2;
+    }
+}
+// console.log(kgToLbs(90))
+
+// INTERSECTION TYPES
+// Intersection types are used to declare types that use other combined types
+// They need to use properties from the types that built them
+type Draggable = {
+    drag: () => void
+}
+
+type Resizable = {
+    resize: () => void
+}
+
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+    drag: () => {},
+    resize: () => {}
+}
+
+// LITERAL TYPES //
+// Literal (exact, specific)
+
+type Quantity = 50 | 100;
+let quantity: Quantity = 100;
+
+type Metric = 'cm' | 'm';
+let measure: Metric = 'cm';
+
+// NULLABLE TYPES
+
+function greet(name: string | null) {
+    if (name){
+        console.log(name.toUpperCase())
+    } else {
+        console.log('Hola')
+    }
+}
+
+greet(null)

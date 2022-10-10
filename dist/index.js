@@ -30,6 +30,27 @@ function calculateTax(income, taxYear) {
     }
 }
 let employee = { id: 1 };
-let employeeTwo = { id: 1, name: 'David' };
-console.log(employeeTwo.name);
+let employeeTwo = {
+    id: 1,
+    name: 'David',
+    retire: (date) => {
+        console.log(date);
+    }
+};
+let anotherEmployee = {
+    id: 2,
+    name: 'Daniel',
+    retire: (date) => {
+        console.log(date);
+    }
+};
+function kgToLbs(weight) {
+    if (typeof weight === 'number') {
+        return weight * 2.2;
+    }
+    else {
+        return parseInt(weight) * 2.2;
+    }
+}
+console.log(kgToLbs(90));
 //# sourceMappingURL=index.js.map
